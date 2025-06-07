@@ -1,0 +1,16 @@
+// vercel.json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/server.js", // Ini adalah file utama Hapi server Anda
+      "use": "@vercel/node"   // Memberitahu Vercel untuk memperlakukan ini sebagai Node.js serverless function
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",           // Menerima semua request masuk
+      "dest": "src/server.js"  // Mengarahkan semua request ke serverless function Anda
+    }
+  ]
+}
